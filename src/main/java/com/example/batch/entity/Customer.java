@@ -1,37 +1,19 @@
-package com.example.demo.entity;
+package com.example.batch.entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "CUSTOMERS_INFO")
 public class Customer {
-
     @Id
-    @Column(name = "CUSTOMER_ID")
-    private int id;
-
-    @Column(name="FIRST_NAME")
-    private String firstName;
-
-    @Column(name="LAST_NAME")
-    private String lastName;
-
-    @Column(name="EMAIL")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
     private String email;
+    private LocalDate dateOfBirth;
 
-    @Column(name="GENDER")
-    private String gender;
-
-    @Column(name="CONTACT")
-    private String contact;
-
-    @Column(name="COUNTRY")
-    private String country;
-
-    @Column(name="DOB")
-    private String dob;
-
+    // Getters & Setters
 }
