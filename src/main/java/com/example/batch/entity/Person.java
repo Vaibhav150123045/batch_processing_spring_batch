@@ -47,4 +47,25 @@ public class Person {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+        // --- Derived field ---
+    public String getFullName() {
+        if (firstName == null && lastName == null) {
+            return "";
+        } else if (firstName == null) {
+            return lastName;
+        } else if (lastName == null) {
+            return firstName;
+        }
+        return firstName + " " + lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
 }
