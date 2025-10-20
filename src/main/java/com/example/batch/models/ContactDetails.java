@@ -12,6 +12,11 @@ public class ContactDetails {
     // --- Constructors ---
     public ContactDetails() {}
 
+    public ContactDetails(String phoneNumber, String email, String alternatePhone) {
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.alternatePhone = alternatePhone;
+    }
 
     // --- Getters and Setters ---
     public String getPhoneNumber() {
@@ -38,5 +43,12 @@ public class ContactDetails {
         this.alternatePhone = alternatePhone;
     }
 
-
+    @Override
+    public String toString() {
+        return "ContactDetails{" +
+                "phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", alternatePhone='" + alternatePhone + '\'' +
+                '}';
+    }
 }
